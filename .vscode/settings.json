@@ -5,6 +5,7 @@
     "**/.pytest_cache": true,
     "**/.ruff_cache": true,
     "**/.mypy_cache": true,
-    "**/.venv": true
+    "**/.venv": true,
+    "**/*egg-info": true
   }
 }
