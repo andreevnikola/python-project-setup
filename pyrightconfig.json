@@ -2,6 +2,20 @@
   "typeCheckingMode": "strict",
   "venvPath": ".",
   "venv": ".venv",
-  "include": ["src"],
-  "exclude": [".venv", "**/__pycache__", "dist", "build"]
+  "include": ["src", "tests"],
+  "exclude": [
+    "**/node_modules",
+    "**/.*",
+    ".venv",
+    "**/__pycache__",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "dist",
+    "build",
+    "**/*.egg-info"
+  ],
+  "executionEnvironments": [
+    { "root": "src", "typeCheckingMode": "strict" },
+    { "root": "tests", "typeCheckingMode": "basic" }
+  ]
 }
