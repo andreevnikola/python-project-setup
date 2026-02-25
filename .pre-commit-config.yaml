@@ -10,3 +10,4 @@ repos:
     hooks:
       - id: prettier
         files: "\\.(md|yml|yaml|json)$"
+        exclude: "^(node_modules|\\.venv|dist|build)/"
