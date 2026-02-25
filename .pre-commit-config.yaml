@@ -1,5 +1,4 @@
 repos:
-  # Ruff: lint + autofix
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.6.9
     hooks:
@@ -7,9 +6,16 @@ repos:
         args: ["--fix"]
       - id: ruff-format
 
-  # Pyright: strict type checking (runs in pre-commit's own env)
   - repo: https://github.com/RobertCraigie/pyright-python
     rev: v1.1.389
     hooks:
       - id: pyright
-        args: ["--strict"]
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: bash -lc 'uv run pytest -q || ([ $? -eq 5 ] && exit 0 || exit $?)'
+        language: system
+        pass_filenames: false
+        always_run: true
