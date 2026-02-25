@@ -1,13 +1,15 @@
 repos:
+  # Ruff: lint + autofix
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.6.9
     hooks:
       - id: ruff
         args: ["--fix"]
       - id: ruff-format
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+
+  # Pyright: strict type checking (runs in pre-commit's own env)
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.389
     hooks:
-      - id: prettier
-        files: "\\.(md|yml|yaml|json)$"
-        exclude: "^(node_modules|\\.venv|dist|build)/"
+      - id: pyright
+        args: ["--strict"]
