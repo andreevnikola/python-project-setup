@@ -25,7 +25,13 @@ target-version = "py313"
 select = ["E", "F", "I", "B", "UP"]
 
 [dependency-groups]
-dev = ["pre-commit>=4.5.1", "pyright>=1.1.408", "pytest>=9.0.2", "ruff>=0.15.2"]
+dev = [
+    "hypothesis>=6.151.9",
+    "pre-commit>=4.5.1",
+    "pyright>=1.1.408",
+    "pytest>=9.0.2",
+    "ruff>=0.15.2",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -33,3 +39,6 @@ pythonpath = ["src"]
 addopts = "-q"
 # Treat "no tests collected" (exit code 5) as success:
 # pytest itself can't change the code, so we handle it in the hook instead (Option A alt below).
+
+[tool.hypothesis]
+deadline = 250

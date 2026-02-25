@@ -8,3 +8,6 @@ run-a: check
 
 run-b: check
 	uv run service-b
+
+test: check
+	uv run pytest tests
