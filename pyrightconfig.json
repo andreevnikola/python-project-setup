@@ -1,7 +1,5 @@
 {
   "typeCheckingMode": "strict",
-  "venvPath": ".",
-  "venv": ".venv",
   "include": ["src", "tests"],
   "exclude": [
     "**/node_modules",
@@ -14,8 +12,6 @@
     "build",
     "**/*.egg-info"
   ],
-  "executionEnvironments": [
-    { "root": "src", "typeCheckingMode": "strict" },
-    { "root": "tests", "typeCheckingMode": "basic" }
-  ]
+  "venvPath": ".",
+  "venv": ".venv"
 }
